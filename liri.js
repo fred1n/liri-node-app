@@ -1,3 +1,4 @@
+//init setup and keys
 require("dotenv").config();
 
 var keys = require("./keys.js");
@@ -18,10 +19,9 @@ var nodeArgv = process.argv;
 var command = process.argv[2];
 var command2 = process.argv[3];
 
-// console.log("nodeArgv: " + nodeArgv);
   console.log("\n\n\nCommand select: " + command + "\n===========================================================");
 
-//movie or song
+//event, movie or song
 var selection = "";
 
 //attaches multiple word arguments
@@ -39,8 +39,7 @@ fs.appendFile("log.txt", moment().format("MM/DD/YYYY HH:mm:ss") + " " + command 
   }
 });
 
-// console.log("selection "+selection);
-//switch case
+//switch case to determine what to do based on what is entered
 switch(command){
   case "concert-this":
   if(selection){
@@ -67,7 +66,7 @@ break;
   break;
 
   case "do-what-it-says":
-    doThing();
+    doWhatItSay();
   break;
 
   default:
@@ -75,6 +74,7 @@ break;
   break;
 }
 
+// API call to return artist/band information
 function events(artist){
   // artist = artistband
   var eventURL = 'https://rest.bandsintown.com/artists/' + artist + '/events?app_id=codingbootcamp';
@@ -100,6 +100,7 @@ function events(artist){
 
 }
 
+// Spotify API call to return song information
 function spotifySong(song){
   spotify.search({ type: 'track', query: song}, function(error, data){
     if(!error){
@@ -129,6 +130,7 @@ function spotifySong(song){
   });
 }
 
+// OMDB API call to return movie information
 function omdbData(movie){
   var omdbURL =   'http://www.omdbapi.com/?t='+ movie +'&y=&plot=short&tomatoes=true&apikey=6d1b76ad';
   
@@ -172,7 +174,8 @@ function omdbData(movie){
 
 }
 
-function doThing(){
+// Using a text file to console out information
+function doWhatItSay(){
   fs.readFile('random.txt', "utf8", function(error, data){
     var txt = data.split(',');
 
