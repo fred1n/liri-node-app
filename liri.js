@@ -4,15 +4,14 @@ var keys = require("./keys.js");
 
 // =================================================
 
-// http://www.omdbapi.com/?i=tt3896198&apikey=6d1b76ad
-
 var inquirer = require("inquirer");
 
 var request = require('request');
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 
-var fs = require('fs');
+var fs = require("fs");
+var moment = require("moment");
 
 //Stored argument's array
 var nodeArgv = process.argv;
@@ -20,86 +19,10 @@ var command = process.argv[2];
 var command2 = process.argv[3];
 
 // console.log("nodeArgv: " + nodeArgv);
-// console.log("command: " +command);
-// console.log("command2: " +command2);
-//===============================================
-// var lirisresponse = ["Hello, my name is Liri your personal assistant created to assist you.\nI am actually a NODE.js version of Siri created to assist you in making entertainment selections.",
-// 	"How are you doing today? What would you like to do?",
-// 	];
-// var options = ["Look for an artist/concert", "Spotify a song", "Movie this", "Do what it says", "See how many greetings I have", "Quit"];
+  console.log("\n\n\nCommand select: " + command + "\n===========================================================");
 
-// functions
-
-// user interfaces
-// function responses() {
-	// var index = Math.floor(Math.random() * lirisresponse.length);
-	// console.log("\n-------------------------------------------------");
-	// console.log("\n" + lirisresponse[index]);
-	// console.log("\n-------------------------------------------------\n");
-	// fs.appendFile("log.txt", moment().format("MM/DD/YYYY HH:mm:ss") + " " + "Liri's launch" + "\n", function(err) {
-	// 	if (err) {
-	// 		return console.log(err);
-	// 	}
-	// });
-// 	inquirer.prompt([
-// 		{
-// 			type: "list",
-// 			message: "What would you like to do today?\n",
-// 			choices: options,
-// 			name: "choice"
-// 		}
-// 		]).then(function(res) {
-// 			switch(res.choice) {
-// 				case options[0]:
-// 					tweet();
-// 					// logtxt(options[0]);
-// 					break;
-
-// 				case options[1]:
-// 					tweets();
-// 					// logtxt(options[1]);
-// 					break;
-
-// 				case options[2]:
-// 					spotifyasong();
-// 					// logtxt(options[2]);
-// 					break;
-
-// 				case options[3]:
-// 					moviethis();
-// 					// logtxt(options[3]);
-// 					break;
-
-// 				case options[4]:
-// 					dowhat();
-// 					// logtxt(options[4]);
-// 					break;
-
-// 				case options[5]:
-// 					randomgreet();
-// 					// logtxt(options[5]);
-// 					break;
-
-// 				case options[6]:
-// 					console.log("\n-------------------------------------------------");
-// 					console.log("\nWe were happy to help you today...see you next time.");
-// 					console.log("\n-------------------------------------------------");
-// 					// logtxt(options[6]);
-// 					break;
-
-// 				default:
-// 					console.log("Oops, I'm unable to assist you today!");
-// 			}
-// 		})
-// };
-
-
-
-//===============================================
 //movie or song
 var selection = "";
-
-//  console.log("nodeArgv.length: " +nodeArgv.length);
 
 //attaches multiple word arguments
 for (var i=3; i<nodeArgv.length; i++){
@@ -109,6 +32,12 @@ for (var i=3; i<nodeArgv.length; i++){
     selection = selection + nodeArgv[i];
   }
 }
+
+fs.appendFile("log.txt", moment().format("MM/DD/YYYY HH:mm:ss") + " " + command + "\n", function(err) {
+  if (err) {
+    return console.log(err);
+  }
+});
 
 // console.log("selection "+selection);
 //switch case
@@ -133,7 +62,7 @@ break;
     if(selection){
       omdbData(selection);
     } else{
-      omdbData("Matrix");
+      omdbData("Mr. Nobody");
     };  
   break;
 
@@ -142,12 +71,12 @@ break;
   break;
 
   default:
-    console.log("{Please enter a command: concert-this, spotify-this-song, movie-this, do-what-it-says}");
+    console.log("{\nPlease enter a command: concert-this, spotify-this-song, movie-this, do-what-it-says}");
   break;
 }
 
-function events(artistband){
-  artist = artistband
+function events(artist){
+  // artist = artistband
   var eventURL = 'https://rest.bandsintown.com/artists/' + artist + '/events?app_id=codingbootcamp';
 
   
@@ -159,10 +88,10 @@ function events(artistband){
       console.log("Venue location: " + body[0].venue.city);
       console.log("Date of the Event: " + body[0].datetime);
 
-      //adds text to log.txt
-      // console.log("Name of the venue: " + body.Title);
-      // console.log("Venue location: " + body.Year);
-      // console.log("Date of the Event: " + body.imdbRating);
+      //adds text to log.txt         
+      // fs.appendFile('log.txt', "body[0].venue.name");
+      // fs.appendFile('log.txt', body[0].venue.city);
+      // fs.appendFile('log.txt', body[0].datetime);
 
     } else{
       console.log('Error occurred in the Events Function.')
@@ -203,7 +132,6 @@ function spotifySong(song){
 function omdbData(movie){
   var omdbURL =   'http://www.omdbapi.com/?t='+ movie +'&y=&plot=short&tomatoes=true&apikey=6d1b76ad';
   
-
   request(omdbURL, function (error, response, body){
     if(!error && response.statusCode == 200){
       var body = JSON.parse(body);
@@ -236,9 +164,9 @@ function omdbData(movie){
       console.log("It's on Netflix!");
 
       //adds text to log.txt
-      fs.appendFile('log.txt', "-----------------------");
-      fs.appendFile('log.txt', "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
-      fs.appendFile('log.txt', "It's on Netflix!");
+      // fs.appendFile('log.txt', "-----------------------");
+      // fs.appendFile('log.txt', "If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+      // fs.appendFile('log.txt', "It's on Netflix!");
     }
   });
 
