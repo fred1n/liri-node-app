@@ -9,11 +9,11 @@ In this assignment we created the app called LIRI. LIRI is like iPhone's SIRI. H
 https://github.com/fred1n/liri-node-app
 
 ## The Stack
-Node.js
-Axios
-Inquirer
-Dotenv
-Moment.js
+* Node.js
+* Axios
+* Inquirer
+* Dotenv
+* Moment.js
 
 ## How it works
 You will need to open up a terminal with GitBash or some other tool where you can run a Node application.
