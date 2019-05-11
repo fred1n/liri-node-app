@@ -20,7 +20,7 @@ You will need to open up a terminal with GitBash or some other tool where you ca
 
 Once the terminal is open and run node liri.js
 
-![Terminal Image](https://github.com/fred1n/liri-node-app/images/terminal1.png)
+![Terminal Image](https://github.com/fred1n/liri-node-app/tree/master/images/terminal1.png)
 
  ### The app has can take in one of the following commands:
 
@@ -36,7 +36,7 @@ Once the terminal is open and run node liri.js
 
             * Date of the Event (use moment to format this as "MM/DD/YYYY")
 
-![ConcertThis Image](https://github.com/fred1n/liri-node-app/images/concertthis.png)
+![ConcertThis Image](https://github.com/fred1n/liri-node-app/tree/master/images/concertthis.png)
 
 * `spotify-this-song` - Below is the way the command should be entered:
         2. `node liri.js spotify-this-song '<song name here>'`
@@ -53,7 +53,7 @@ Once the terminal is open and run node liri.js
 
         * If no song is provided then your program will default to "The Sign" by Ace of Base.
 
-![SpotifyThis Image](https://github.com/fred1n/liri-node-app/images/spotifythis.png)
+![SpotifyThis Image](https://github.com/fred1n/liri-node-app/tree/master/images/spotifythis.png)
 
 * `movie-this` - Below is the way the command should be entered:
         3. `node liri.js movie-this '<movie name here>'`
@@ -76,7 +76,7 @@ Once the terminal is open and run node liri.js
             * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>
 
             * It's on Netflix!
-![MovieThis Image](https://github.com/fred1n/liri-node-app/images/moviethis.png)
+![MovieThis Image](https://github.com/fred1n/liri-node-app/tree/master/images/moviethis.png)
 
  * `do-what-it-says` - Below is the way the command should be entered:
         4. `node liri.js do-what-it-says`
@@ -87,7 +87,7 @@ Once the terminal is open and run node liri.js
 
             * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-![MovieThis Image](https://github.com/fred1n/liri-node-app/images/dothisthing.png)
+![DothisImage Image](https://github.com/fred1n/liri-node-app/tree/master/images/dothisthing.png)
 
 Challenges
 I enjoyed making this as I am starting to feel more comfortable with my javascript ability. The first problem I met was using the switch case as previously I had only used if/else statements. The second problem had to do with getting the spotify and movie searches to default. I tried a few different ways but landed on using the || operator within the template literal. Outside of the code issues this was the first time I had installed npm packages, fairly straightforward but I did type in the wrong command a few times. This led to my understanding of the value of reading the documentation available. I also learned about .gitignore and why it is important to not commit everything to Github.
