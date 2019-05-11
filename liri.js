@@ -19,7 +19,7 @@ var nodeArgv = process.argv;
 var command = process.argv[2];
 var command2 = process.argv[3];
 
-  console.log("\n\n\nCommand select: " + command + "\n===========================================================");
+  console.log("\n\n\nCommand selected: " + command + "\n===========================================================");
 
 //event, movie or song
 var selection = "";
