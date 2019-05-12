@@ -20,7 +20,7 @@ You will need to open up a terminal with GitBash or some other tool where you ca
 
 Once the terminal is open and run node liri.js
 
-![Terminal Image](https://github.com/fred1n/liri-node-app/tree/master/images/terminal1.png)
+![Terminal Image](./images/terminal1.jpeg)
 
  ### The app has can take in one of the following commands:
 
