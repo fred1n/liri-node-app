@@ -53,7 +53,7 @@ Once the terminal is open and run node liri.js
 
         * If no song is provided then your program will default to "The Sign" by Ace of Base.
 
-![SpotifyThis Image](https://github.com/fred1n/liri-node-app/tree/master/images/spotifythis.png)
+![SpotifyThis Image](/images/spotifythis.png)
 
 * `movie-this` - Below is the way the command should be entered:
         3. `node liri.js movie-this '<movie name here>'`
@@ -76,7 +76,7 @@ Once the terminal is open and run node liri.js
             * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>
 
             * It's on Netflix!
-![MovieThis Image](https://github.com/fred1n/liri-node-app/tree/master/images/moviethis.png)
+![MovieThis Image](/images/moviethis.png)
 
  * `do-what-it-says` - Below is the way the command should be entered:
         4. `node liri.js do-what-it-says`
@@ -87,6 +87,6 @@ Once the terminal is open and run node liri.js
 
             * Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-![DothisImage Image](https://github.com/fred1n/liri-node-app/tree/master/images/dothisthing.png)
+![DothisImage Image](/images/dothisthing.png)
 
 
